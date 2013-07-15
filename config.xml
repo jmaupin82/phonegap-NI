@@ -7,14 +7,14 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Employee Directory</name>
+    <name>Accelerometer Test</name>
 
     <description>
-        A simple employee directory application
+        This app will connect to a labview server and will send data measurements back and forth to the LabVIEW server. Essentially the phone will be a sensor and the LabVIEW server will be an indicator. 
     </description>
 
-    <author href="http://coenraets.org" email="ccoenraets@gmail.com">
-        Christophe Coenraets
+    <author email="jmaupin82@gmail.com">
+        Joel Maupin
     </author>
 
 </widget>
