@@ -17,7 +17,15 @@ $(document).ready(function(){
 
 //wait for PhoneGap to load
 document.addEventListener("deviceready", loaded, false);
-
+//address that is where we will post information
+var postAddress = "0.0.0.0";
+// variable used in accellerometer reads
+var watchID;
+//open up the settings options
+function settings(){
+    //this is where information will be posted to the labview server.
+    alert("Settings was pressed");
+}
 // PhoneGap is ready
 function loaded() {
     startWatch();
