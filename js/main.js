@@ -53,8 +53,6 @@ function onSuccess(acceleration) {
                         'Acceleration Y: ' + acceleration.y + '<br />' +
                         'Acceleration Z: ' + acceleration.z + '<br />' +
                         'Timestamp: '      + acceleration.timestamp + '<br />';
-    //location.reload();
-    alert("Callback fired even though HTML wont update.");
 }
  // Error
 function onError() {
