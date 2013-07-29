@@ -13,10 +13,7 @@ $(document).ready(function(){
     });
 });
 */
-//this is all code taken from TuxTutor.com
 
-//wait for PhoneGap to load
-document.addEventListener("deviceready", loaded, false);
 //address that is where we will post information
 var postAddress = "0.0.0.0";
 // variable used in accellerometer reads
@@ -26,14 +23,10 @@ function settings(){
     //this is where information will be posted to the labview server.
     alert("Settings was pressed");
 }
-// PhoneGap is ready
-function loaded() {
-    startWatch();
-}
 // Start watching the acceleration
 function startWatch() {
-    // Update acceleration every 3 seconds
-    var options = { frequency: 3000 };
+    // Update acceleration every 1 seconds
+    var options = { frequency: 1000 };
     watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
     $('#control-button').val("Stop");
 }
