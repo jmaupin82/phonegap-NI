@@ -1,14 +1,23 @@
 
 //navigator.accelerometer.getCurrentAcceleration(accelerometerSuccess, accelerometerError);
-
-
-
-
-
+/*
+$(document).ready(function(){   
+    $.ajax({
+      type: "POST",
+      url: 'http://10.0.60.138:8001/MathService/retrieve_Data',
+      data: '{somekey: somevalue, fooKey: foovalue}',
+      success: function(){
+        console.log("this worked!");
+      },
+      dataType: ""
+    });
+});
+*/
 //this is all code taken from TuxTutor.com
 
 //wait for PhoneGap to load
 document.addEventListener("deviceready", loaded, false);
+
 // PhoneGap is ready
 function loaded() {
     startWatch();
@@ -18,6 +27,7 @@ function startWatch() {
     // Update acceleration every 3 seconds
     var options = { frequency: 3000 };
     watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    $('#control-button').val("Stop");
 }
 // Stop watching the acceleration
 function stopWatch() {
@@ -25,6 +35,7 @@ function stopWatch() {
         navigator.accelerometer.clearWatch(watchID);
         watchID = null;
     }
+    $('#control-button').val("Start");
 }
 // Success
 function onSuccess(acceleration) {
