@@ -17,17 +17,19 @@ $(document).ready(function(){
 //address that is where we will post information
 var postAddress = "0.0.0.0";
 // variable used in accellerometer reads
-var watchID;
+var started = false;
 //open up the settings options
 function settings(){
     //this is where information will be posted to the labview server.
     alert("Settings was pressed");
 }
 function watch(){
-    if(started){
+    if(!started){
         startWatch();
+        started = true;
     }else{
         stopWatch();
+        started = false;
     }
 }
 // Start watching the acceleration
@@ -40,7 +42,7 @@ function startWatch() {
 }
 // Stop watching the acceleration
 function stopWatch() {
-        navigator.accelerometer.clearWatch(watchID);
+    navigator.accelerometer.clearWatch(watchID);
         
     }
     $('#control-button').val("Start");
@@ -52,6 +54,7 @@ function onSuccess(acceleration) {
                         'Acceleration Y: ' + acceleration.y + '<br />' +
                         'Acceleration Z: ' + acceleration.z + '<br />' +
                         'Timestamp: '      + acceleration.timestamp + '<br />';
+    location.reload();
 }
  // Error
 function onError() {
