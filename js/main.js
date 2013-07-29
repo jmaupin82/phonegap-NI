@@ -23,18 +23,25 @@ function settings(){
     //this is where information will be posted to the labview server.
     alert("Settings was pressed");
 }
+function watch(){
+    if(started){
+        startWatch();
+    }else{
+        stopWatch();
+    }
+}
 // Start watching the acceleration
 function startWatch() {
     // Update acceleration every 1 seconds
     var options = { frequency: 1000 };
-    watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    //phonegap accelerometer read.
+    navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
     $('#control-button').val("Stop");
 }
 // Stop watching the acceleration
 function stopWatch() {
-    if (watchID) {
         navigator.accelerometer.clearWatch(watchID);
-        watchID = null;
+        
     }
     $('#control-button').val("Start");
 }
