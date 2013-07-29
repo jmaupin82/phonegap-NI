@@ -43,10 +43,9 @@ function startWatch() {
 // Stop watching the acceleration
 function stopWatch() {
     navigator.accelerometer.clearWatch(watchID);
-        
-    }
-    $('#control-button').val("Start");
+    $('#control-button').val("Start");  
 }
+    
 // Success
 function onSuccess(acceleration) {
     var element = document.getElementById('accelerometer');
@@ -54,7 +53,8 @@ function onSuccess(acceleration) {
                         'Acceleration Y: ' + acceleration.y + '<br />' +
                         'Acceleration Z: ' + acceleration.z + '<br />' +
                         'Timestamp: '      + acceleration.timestamp + '<br />';
-    location.reload();
+    //location.reload();
+    alert("Callback fired even though HTML wont update.");
 }
  // Error
 function onError() {
