@@ -21,8 +21,8 @@ var started = false;
 //open up the settings options
 function settings(){
     //this is where information will be posted to the labview server.
-    alert("Settings was pressed");
-}
+    
+
 function watch(){
     if(!started){
         startWatch();
@@ -53,6 +53,10 @@ function onSuccess(acceleration) {
                         'Acceleration Y: ' + acceleration.y + '<br />' +
                         'Acceleration Z: ' + acceleration.z + '<br />' +
                         'Timestamp: '      + acceleration.timestamp + '<br />';
+    xmlhttp.open("POST","http://10.0.60.138:8001/MathService/retrieve_Data",false);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send(element.innerHTML);}
+    document.getElementById("response").innerHTML=xmlhttp.responseText;
 }
  // Error
 function onError() {

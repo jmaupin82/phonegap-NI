@@ -20,12 +20,27 @@
     <div class='span12' id="accelerometer">
         Waiting for accelerometer...
     </div>
-    <div id='form-div'>
+    <div id='start-stop'>
         <form>
-            <input type='button' value='Settings' onclick='settings()'/>
             <input id='control-button' type='button' value='Start' onclick='watch()'/>
         </form>
     </div>
+    <div id='settings-div'>
+        <form>
+            <input type='button' value='Settings' onclick='settings()'/>
+        </form>
+        <div id='detailed-settings'>
+            <form>
+                IP Address of the LabVIEW Webserver: <input type='text' value='ex) 192.168.1.1' name='address' id='web-address'/>
+                <input type='button' value='Submit' onclick='updateSettings()' />
+            </form>
+
+        </div>
+    </div>
+    <div>
+        This is the response info: <div id='response'>none</div>
+    </div>
+
 </div>
 
 </body>
