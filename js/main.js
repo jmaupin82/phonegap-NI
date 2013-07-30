@@ -13,7 +13,9 @@ $(document).ready(function(){
     });
 });
 */
-
+function onDeviceReady() {
+        $("#detailed-settings").hide();
+    }
 //address that is where we will post information
 var postAddress = "0.0.0.0";
 // variable used in accellerometer reads
@@ -21,7 +23,8 @@ var started = false;
 //open up the settings options
 function settings(){
     //this is where information will be posted to the labview server.
-    
+    $('#detailed-settings').show();
+}
 
 function watch(){
     if(!started){
